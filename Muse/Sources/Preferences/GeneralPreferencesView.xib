@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15702" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14109"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15702"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -17,7 +17,7 @@
             <rect key="frame" x="0.0" y="0.0" width="280" height="160"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1em-VS-QNe">
+                <button identifier="controlStripButton" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1em-VS-QNe">
                     <rect key="frame" x="18" y="124" width="141" height="18"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="check" title="Control strip button" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="jae-5H-5v9">
@@ -25,19 +25,19 @@
                         <font key="font" metaFont="system"/>
                     </buttonCell>
                     <connections>
-                        <binding destination="-2" name="value" keyPath="showControlStripItem" id="EkK-is-LB1"/>
+                        <action selector="handleClick:" target="-2" id="aon-kh-qFs"/>
                     </connections>
                 </button>
-                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FWc-Ba-CHZ">
+                <button identifier="hudControlStrip" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FWc-Ba-CHZ">
                     <rect key="frame" x="18" y="86" width="189" height="18"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="check" title="HUD for control strip action" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="pDr-kM-TDY">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
+                        <connections>
+                            <action selector="handleClick:" target="-2" id="SKd-cr-1Yk"/>
+                        </connections>
                     </buttonCell>
-                    <connections>
-                        <binding destination="-2" name="value" keyPath="showHUDForControlStripAction" id="UBG-Dy-1pa"/>
-                    </connections>
                 </button>
                 <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vDL-1y-fEZ">
                     <rect key="frame" x="37" y="110" width="184" height="14"/>
@@ -57,7 +57,7 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Do9-lv-yog">
+                <button identifier="songTitleMenu" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Do9-lv-yog">
                     <rect key="frame" x="18" y="34" width="152" height="18"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="check" title="Song title in menubar" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="bZb-2b-8Xr">
@@ -65,7 +65,7 @@
                         <font key="font" metaFont="system"/>
                     </buttonCell>
                     <connections>
-                        <binding destination="-2" name="value" keyPath="showSongTitle" id="Lbz-ME-yDa"/>
+                        <action selector="handleClick:" target="-2" id="cpj-y5-u2J"/>
                     </connections>
                 </button>
                 <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rSp-dL-Vp5">
@@ -78,7 +78,7 @@
                     </textFieldCell>
                 </textField>
             </subviews>
-            <point key="canvasLocation" x="120" y="360"/>
+            <point key="canvasLocation" x="-42" y="202"/>
         </customView>
         <userDefaultsController representsSharedInstance="YES" id="3KK-dH-wI9"/>
     </objects>

@@ -5,3 +5,4 @@ Pods/
 Applications/*.zip
 Applications/*.app
 Applications/.tmp
+.DS_Store

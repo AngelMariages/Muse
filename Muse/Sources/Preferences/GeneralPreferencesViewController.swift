@@ -24,7 +24,6 @@ class GeneralPreferencesViewController: NSViewController, MASPreferencesViewCont
     var toolbarItemImage: NSImage? = NSImage(named: NSImage.Name.preferencesGeneral)
     
     // MARK: General preferences
-    
     var showControlStripItem: Bool {
         set {
             Preference<Bool>(.controlStripItem).set(newValue)
@@ -32,6 +31,21 @@ class GeneralPreferencesViewController: NSViewController, MASPreferencesViewCont
         
         get {
             return Preference<Bool>(.controlStripItem).value
+        }
+    }
+
+    @IBAction func handleClick(_ sender: NSButton) {
+        switch sender.identifier?.rawValue {
+            case "controlStripButton":
+                showControlStripItem = sender.state.rawValue == 0 ? false : true
+            case "hudControlStrip":
+                showHUDForControlStripAction = sender.state.rawValue == 0 ? false : true
+            case "songTitleMenu":
+                showSongTitle = sender.state.rawValue == 0 ? false : true
+            case .none:
+                print("none")
+            case .some(_):
+                print("some")
         }
     }
     
